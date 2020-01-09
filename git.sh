@@ -3,16 +3,16 @@
 
 #!/bin/bash
 
-cd /d/awskeys/workspace # to get into local workspace
+cd /Desktop/workspace # to get into local workspace
 
-git checkout master  # for featureX branch
+git checkout release  # for featureX branch
 
 files=$(git diff --name-only)        # for unstaged changes
 
 for temp in $files
 do
         {
-                cp $temp /g/changedFile/ #backup directory
+                cp $temp /Desktop #backup directory
         }
 done
 
@@ -21,7 +21,7 @@ files=$(git diff --cached --name-only) # for staged changes
 for temp in $files
 do
         {
-                cp $temp /g/changedFile/
+                cp $temp /Desktop
         }
 done
 
@@ -30,7 +30,7 @@ files=$(git diff --name-only HEAD --diff-filter=ACMRTUXB) # for all changes sinc
 for temp in $files
 do
         {
-                cp $temp /g/changedFile/
+                cp $temp /Desktop/
         }
 done
 
